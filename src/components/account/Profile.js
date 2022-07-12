@@ -1,11 +1,10 @@
 import React from 'react';
 import {View, Text, ScrollView} from 'react-native';
-import { ProfileBody,ProfileButtons } from './ProfileBody';
+import { ProfileBody, } from '../Profile/ProfileBody';
 // import Entypo from 'react-native-vector-icons/Entypo';
-import BottomTabView from './BottomTabView';
-import { POSTS } from '../Home/Post';
+import BottomTabView from '../screenComponents/BottomTabView';
 
-const Profile = ({post}) => {
+const Profile = () => {
   let circuls = [];
   let numberofcircels = 10;
 
@@ -47,7 +46,7 @@ const Profile = ({post}) => {
         <ProfileBody
           name="Mr Peobody"
           accountName="mr_peobody"
-          profileImage={require('../../images/logo.png')}
+          profileImage={require('../../storage/images/userProfile.png')}
           followers="3.6M"
           following="35"
           post="458"
@@ -56,7 +55,7 @@ const Profile = ({post}) => {
           id={0}
           name="Mr Peobody"
           accountName="mr_peobody"
-          profileImage={require('../../images/logo.png')}
+          profileImage={require('../../storage/images/userProfile.png')}
         />
       </View>
       <View>
@@ -78,7 +77,7 @@ const Profile = ({post}) => {
           {circuls}
         </ScrollView>
       </View>
-      <BottomTabView /> 
+      <BottomTabView />
     </View>
   );
 };
