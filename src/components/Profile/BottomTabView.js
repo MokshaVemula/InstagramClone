@@ -17,8 +17,8 @@ const BottomTabView = () => {
             width: 130,
             height: 150,
             marginVertical: 0.5,
-            backgroundColor: 'black',
-            opacity: 0.1,
+            backgroundColor: 'white',
+            opacity: 0.3,
           }}></View>
       </View>,
     );
@@ -36,7 +36,7 @@ const BottomTabView = () => {
           style={{
             width: '100%',
             height: '100%',
-            backgroundColor: 'white',
+            backgroundColor: 'black',
             flexWrap: 'wrap',
             flexDirection: 'row',
             paddingVertical: 5,
@@ -59,7 +59,7 @@ const BottomTabView = () => {
           style={{
             width: '100%',
             height: '100%',
-            backgroundColor: 'white',
+            backgroundColor: 'black',
             flexWrap: 'wrap',
             flexDirection: 'row',
             paddingVertical: 5,
@@ -82,7 +82,7 @@ const BottomTabView = () => {
           style={{
             width: '100%',
             height: '100%',
-            backgroundColor: 'white',
+            backgroundColor: 'black',
             flexWrap: 'wrap',
             flexDirection: 'row',
             paddingVertical: 5,
@@ -97,6 +97,7 @@ const BottomTabView = () => {
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
+        tabBarStyle:{backgroundColor:'black'},
         tabBarShowLabel: false,
         tabBarIndicatorStyle: {
           backgroundColor: 'black',
@@ -106,18 +107,20 @@ const BottomTabView = () => {
           let iconName;
           if (route.name === 'Posts') {
             iconName = focused ? 'ios-apps-sharp' : 'ios-apps-sharp';
-            colour = focused ? 'black' : 'gray';
+            colour = focused ? 'white' : 'gray';
           } else if (route.name === 'Video') {
             iconName = focused ? 'ios-play-circle' : 'ios-play-circle-outline';
-            colour = focused ? 'black' : 'gray';
+            colour = focused ? 'white' : 'gray';
           } else if (route.name === 'Tags') {
             iconName = focused ? 'ios-person' : 'ios-person-outline';
-            colour = focused ? 'black' : 'gray';
+            colour = focused ? 'white' : 'gray';
           }
 
           return <Ionic name={iconName} color={colour} size={22} />;
         },
-      })}>
+      })}
+      
+      >
       <Tab.Screen name="Posts" component={Posts} />
       <Tab.Screen name="Video" component={Video} />
       <Tab.Screen name="Tags" component={Tags} />

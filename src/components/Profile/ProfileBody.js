@@ -29,6 +29,7 @@ const ProfileBody = ({
               style={{
                 fontSize: 18,
                 fontWeight: 'bold',
+                color:'white'
               }}>
               {accountName}
             </Text>
@@ -36,9 +37,9 @@ const ProfileBody = ({
               name="chevron-down"
               style={{
                 fontSize: 20,
-                color: 'black',
+                color: 'white',
                 paddingHorizontal: 5,
-                opacity: 0.5,
+                opacity: 0.7,
               }}
             />
           </View>
@@ -47,14 +48,15 @@ const ProfileBody = ({
               name="plus-square"
               style={{
                 fontSize: 25,
-                color: 'black',
+                color: 'white',
                 paddingHorizontal: 15,
               }}
             />
             <Feather
               name="menu"
               style={{
-                fontSize: 25,
+                fontSize: 25, 
+                color: 'white',
               }}
             />
           </View>
@@ -78,27 +80,30 @@ const ProfileBody = ({
               width: 80,
               height: 80,
               borderRadius: 100,
+              borderColor:'white',
+              borderWidth:1
             }}
           />
           <Text
             style={{
               paddingVertical: 5,
               fontWeight: 'bold',
+              color:'white'
             }}>
             {name}
           </Text>
         </View>
         <View style={{alignItems: 'center'}}>
-          <Text style={{fontWeight: 'bold', fontSize: 18}}>{post}</Text>
-          <Text>Posts</Text>
+          <Text style={{fontWeight: 'bold', fontSize: 18, color: 'white',}}>{post}</Text>
+          <Text style={{color:'white'}}>Posts</Text>
         </View>
         <View style={{alignItems: 'center'}}>
-          <Text style={{fontWeight: 'bold', fontSize: 18}}>{followers}</Text>
-          <Text>Followers</Text>
+          <Text style={{fontWeight: 'bold', fontSize: 18, color: 'white',}}>{followers}</Text>
+          <Text style={{color:'white'}}>Followers</Text>
         </View>
         <View style={{alignItems: 'center'}}>
-          <Text style={{fontWeight: 'bold', fontSize: 18}}>{following}</Text>
-          <Text>Following</Text>
+          <Text style={{fontWeight: 'bold', fontSize: 18, color: 'white',}}>{following}</Text>
+          <Text style={{color:'white'}}>Following</Text>
         </View>
       </View>
     </View>
@@ -129,6 +134,7 @@ const ProfileButtons = ({id, name, accountName, profileImage}) => {
             }
             style={{
               width: '100%',
+              color: 'white',
             }}>
             <View
               style={{
@@ -146,6 +152,7 @@ const ProfileButtons = ({id, name, accountName, profileImage}) => {
                   fontSize: 14,
                   letterSpacing: 1,
                   opacity: 0.8,
+                  color: 'white',
                 }}>
                 Edit Profile
               </Text>
@@ -188,6 +195,7 @@ const ProfileButtons = ({id, name, accountName, profileImage}) => {
               justifyContent: 'center',
               alignItems: 'center',
               borderRadius: 5,
+              color:'white'
             }}>
             <Text>Message</Text>
           </View>
@@ -203,7 +211,7 @@ const ProfileButtons = ({id, name, accountName, profileImage}) => {
             }}>
             <Feather
               name="chevron-down"
-              style={{fontSize: 20, color: 'black'}}
+              style={{fontSize: 20, color: 'white'}}
             />
           </View>
         </View>

@@ -19,10 +19,11 @@ const Profile = ({post}) => {
               height: 60,
               borderRadius: 100,
               borderWidth: 1,
-              opacity: 0.7,
+              opacity: 0.5,
               marginHorizontal: 5,
               justifyContent: 'center',
               alignItems: 'center',
+              borderColor:'white',
             }}>
             {/* <Entypo name="plus" style={{fontSize: 40, color: 'black'}} /> */}
           </View>
@@ -32,9 +33,11 @@ const Profile = ({post}) => {
               width: 60,
               height: 60,
               borderRadius: 100,
-              backgroundColor: 'black',
+              backgroundColor: 'white',
               opacity: 0.1,
               marginHorizontal: 5,
+              borderColor:'white',
+              borderWidth: 1,
             }}></View>
         )}
       </View>,
@@ -42,12 +45,12 @@ const Profile = ({post}) => {
   }
 
   return (
-    <View style={{width: '100%', height: '100%', backgroundColor: 'white'}}>
+    <View style={{width: '100%', height: '100%', backgroundColor: 'black'}}>
       <View style={{width: '100%', padding: 10}}>
         <ProfileBody
-          name="Mr Peobody"
-          accountName="mr_peobody"
-          profileImage={require('../../images/logo.png')}
+          name={POSTS[0].user}
+          accountName={POSTS[0].user}
+          profileImage={{uri:POSTS[0].imageUrl}}
           followers="3.6M"
           following="35"
           post="458"
@@ -62,9 +65,11 @@ const Profile = ({post}) => {
       <View>
         <Text
           style={{
-            padding: 10,
+            paddingHorizontal: 10,
+            paddingBottom:10,
             letterSpacing: 1,
             fontSize: 14,
+            color:'white'
           }}>
           Story Highlights
         </Text>
@@ -72,7 +77,8 @@ const Profile = ({post}) => {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           style={{
-            paddingVertical: 5,
+            // paddingVertical: 5,
+            paddingBottom:5,
             paddingHorizontal: 10,
           }}>
           {circuls}
