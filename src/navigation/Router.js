@@ -12,12 +12,13 @@ import Profile from '../components/Profile/Profile'
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "../Authentication/Login";
 import Register from "../Authentication/Register";
+import EditProfile from "../components/Profile/EditProfile";
 
 const Tab = createBottomTabNavigator()
 
-const Router = () =>{
+const BottomTabNavigation = () =>{
     return(
-        <NavigationContainer>
+        
             <Tab.Navigator screenOptions={{headerShown:false, tabBarShowLabel:false, }} 
                 tabBarOptions={{activeBackgroundColor: 'black', inactiveBackgroundColor: 'black',}}
             >
@@ -27,7 +28,7 @@ const Router = () =>{
                 <Tab.Screen name="Like" component={Like} options={{tabBarIcon:()=>(<Icon name='heart-outline' color='white' size={30}/>)}}/>
                 <Tab.Screen name="Profile" component={Profile} options={{tabBarIcon:()=>(<Image source={{uri:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80'}} style={{height:35, width:35, borderRadius:18, borderWidth:2,borderColor:'white', marginTop:3}}/>)}}/>
             </Tab.Navigator>
-        </NavigationContainer>
+        
     )
 }
 
@@ -43,4 +44,20 @@ const Authentication = () =>{
     )
 }
 
-export {Router, Authentication}
+
+const HomeStack = () =>{
+    const Stack = createNativeStackNavigator();
+    return(
+        <NavigationContainer>
+            <Stack.Navigator
+                screenOptions={{
+                headerShown: false,
+                }}>
+                <Stack.Screen name="BottomTabNavigation" component={BottomTabNavigation} />
+                <Stack.Screen name="EditProfile" component={EditProfile} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    )
+}
+
+export {HomeStack, Authentication}

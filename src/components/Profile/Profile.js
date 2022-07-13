@@ -1,9 +1,10 @@
 import React from 'react';
-import {View, Text, ScrollView} from 'react-native';
+import {View, Text, ScrollView, Image} from 'react-native';
 import { ProfileBody,ProfileButtons } from './ProfileBody';
 // import Entypo from 'react-native-vector-icons/Entypo';
 import BottomTabView from './BottomTabView';
 import { POSTS } from '../Home/Post';
+import { USERS } from '../Home/Stories';
 
 const Profile = ({post}) => {
   let circuls = [];
@@ -51,15 +52,15 @@ const Profile = ({post}) => {
           name={POSTS[0].user}
           accountName={POSTS[0].user}
           profileImage={{uri:POSTS[0].imageUrl}}
-          followers="3.6M"
+          followers="4.6M"
           following="35"
           post="458"
         />
         <ProfileButtons
           id={0}
-          name="Mr Peobody"
-          accountName="mr_peobody"
-          profileImage={require('../../images/logo.png')}
+          name={POSTS[0].user}
+          accountName={POSTS[0].user}
+          profileImage={{uri:POSTS[0].imageUrl}}
         />
       </View>
       <View>
@@ -81,7 +82,24 @@ const Profile = ({post}) => {
             paddingBottom:5,
             paddingHorizontal: 10,
           }}>
-          {circuls}
+          {USERS.map((index, key)=>(
+            <Image 
+              source={{uri:index.image}}
+              key={key}
+              style={{
+                width: 60,
+                height: 60,
+                borderRadius: 100,
+                borderWidth: 1,
+                // opacity: 0.5,
+                marginHorizontal: 5,
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderColor:'white',}}
+
+                
+              />
+          ))}
         </ScrollView>
       </View>
       <BottomTabView /> 

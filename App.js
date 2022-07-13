@@ -1,7 +1,7 @@
 import React from "react";
 import {Text, View, ActivityIndicator} from 'react-native'
 import { Provider, useDispatch, useSelector } from "react-redux";
-import {Router} from "./src/navigation/Router";
+import { HomeStack } from "./src/navigation/Router";
 import { Authentication } from "./src/navigation/Router";
 import { store } from "./src/redux/store";
 import { getToken } from "./src/redux/actions";
@@ -16,7 +16,7 @@ const InstaClone=()=>{
 
   if (uid){
     return(
-      <Router/>
+      <HomeStack/>
     )  
   }
   return(
