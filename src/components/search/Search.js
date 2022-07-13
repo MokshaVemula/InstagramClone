@@ -1,155 +1,110 @@
-import React from "react";
-import { View } from "react-native";
-import Stories from "react-native-stories-media";
+import React, {useState} from 'react';
+import {
+  View,
+  StatusBar,
+  ScrollView,
+  TouchableOpacity,
+  Dimensions,
+  Image,
+  Text,
+} from 'react-native';
+import SearchBox from './SearchBox';
+import SearchContent from './SearchContent';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Ionic from 'react-native-vector-icons/Ionicons';
+import Feather from 'react-native-vector-icons/Feather';
 
-const data = [
-  {
-    username: "Guilherme",
-    title: "Title story",
-    profile:
-      "https://avatars2.githubusercontent.com/u/26286830?s=460&u=5d586a3783a6edeb226c557240c0ba47294a4229&v=4",
-    stories: [
-      {
-        id: 1,
-        url:
-          "https://images.unsplash.com/photo-1532579853048-ec5f8f15f88d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        type: "image",
-        duration: 2,
-        isReadMore: true,
-        url_readmore: "https://github.com/iguilhermeluis",
-        created: "2021-01-07T03:24:00",
-      },
-    ],
-  },
-  {
-    username: "Bruno",
-    profile: "https://avatars2.githubusercontent.com/u/45196619?s=460&v=4",
-    title: "Travel",
-    stories: [
-      {
-        id: 0,
-        url:
-          "https://images.unsplash.com/photo-1500099817043-86d46000d58f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        type: "image",
-        duration: 2,
-        isReadMore: true,
-        url_readmore: "https://github.com/iguilhermeluis",
-        created: "2021-01-07T03:24:00",
-      },
-      {
-        id: 1,
-        url: "https://www.w3schools.com/html/mov_bbb.mp4",
-        type: "video",
-        duration: 2,
-        isReadMore: true,
-        url_readmore: "https://github.com/iguilhermeluis",
-        created: "2021-01-07T03:24:00",
-      },
-      {
-        id: 2,
-        url:
-          "https://images.unsplash.com/photo-1476292026003-1df8db2694b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        type: "image",
-        duration: 2,
-        isReadMore: false,
-        url_readmore: "",
-        created: "2021-01-07T03:24:00",
-      },
-      {
-        id: 3,
-        url:
-          "https://images.unsplash.com/photo-1498982261566-1c28c9cf4c02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        type: "image",
-        duration: 2,
-        isReadMore: true,
-      },
-    ],
-  },
-  {
-    username: "Steve Jobs",
-    profile:
-      "https://s3.amazonaws.com/media.eremedia.com/uploads/2012/05/15181015/stevejobs.jpg",
-    title: "Tech",
-    stories: [
-      {
-        id: 1,
-        url:
-          "https://images.unsplash.com/photo-1515578706925-0dc1a7bfc8cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-        type: "image",
-        duration: 2,
-        isReadMore: true,
-        url_readmore: "https://github.com/iguilhermeluis",
-        created: "2021-01-07T03:24:00",
-      },
-      {
-        id: 3,
-        url:
-          "https://images.unsplash.com/photo-1496287437689-3c24997cca99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        type: "image",
-        duration: 2,
+const Search = () => {
+  const [image, setImage] = useState(null);
 
-        isReadMore: true,
-        url_readmore: "https://github.com/iguilhermeluis",
-        created: "2021-01-07T03:24:00",
-      },
-      {
-        id: 4,
-        url:
-          "https://images.unsplash.com/photo-1514870262631-55de0332faf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        type: "image",
-        duration: 2,
+  const getData = data => {
+    setImage(data);
+  };
 
-        isReadMore: true,
-        url_readmore: "https://github.com/iguilhermeluis",
-        created: "2021-01-07T03:24:00",
-      },
-    ],
-  },
-  {
-    username: "Jacob",
-    profile:
-      "https://images.unsplash.com/profile-1531581190171-0cf831d86212?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff",
-    title: "News",
-    stories: [
-      {
-        id: 4,
-        url:
-          "https://images.unsplash.com/photo-1512101176959-c557f3516787?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        type: "image",
-        duration: 2,
-        isReadMore: true,
-        url_readmore: "https://github.com/iguilhermeluis",
-        created: "2021-01-07T03:24:00",
-      },
-      {
-        id: 5,
-        url:
-          "https://images.unsplash.com/photo-1478397453044-17bb5f994100?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        type: "image",
-        duration: 2,
+  const windowWidth = Dimensions.get('window').width;
+  const windoeHeight = Dimensions.get('window').height;
 
-        isReadMore: true,
-        url_readmore: "https://github.com/iguilhermeluis",
-        created: "2021-01-07T03:24:00",
-      },
-      {
-        id: 4,
-        url:
-          "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=581&q=80",
-        type: "image",
-        duration: 2,
-        isReadMore: true,
-        url_readmore: "https://github.com/iguilhermeluis",
-        created: "2021-01-07T03:24:00",
-      },
-    ],
-  },
-];
-
-export default function Search() {
   return (
-    <View style={{ flex: 1, paddingVertical: 20 }}>
-      <Stories data={data} />
+    <View
+      style={{
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'black',
+        position: 'relative',
+      }}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <SearchBox />
+        <SearchContent data={getData} />
+        <TouchableOpacity
+          style={{
+            margin: 25,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <AntDesign name="pluscircleo" style={{fontSize: 40, opacity: 0.5}} />
+        </TouchableOpacity>
+      </ScrollView>
+      {image ? (
+        <View
+          style={{
+            position: 'absolute',
+            zIndex: 1,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(52,52,52,0.8)',
+          }}>
+          <StatusBar backgroundColor="#525252" barStyle="dark-content" />
+          <View
+            style={{
+              position: 'absolute',
+              top: windoeHeight / 6,
+              left: windowWidth / 18,
+              backgroundColor: 'white',
+              width: '90%',
+              height: 465,
+              borderRadius: 15,
+              zIndex: 1,
+              elevation: 50,
+            }}>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                paddingVertical: 10,
+                paddingHorizontal: 15,
+              }}>
+              <Image
+                source={image}
+                style={{
+                  width: 30,
+                  height: 30,
+                  borderRadius: 100,
+                }}
+              />
+              <View style={{paddingLeft: 8}}>
+                <Text style={{fontSize: 12, fontWeight: '600'}}>
+                  the_anonymous_guy
+                </Text>
+              </View>
+            </View>
+            <Image source={image} style={{width: '100%', height: '80%'}} />
+            <View
+              style={{
+                justifyContent: 'space-around',
+                width: '100%',
+                flexDirection: 'row',
+                alignItems: 'center',
+                padding: 8,
+              }}>
+              <Ionic name="ios-heart-outline" style={{fontSize: 26}} />
+              <Ionic name="ios-person-circle-outline" style={{fontSize: 26}} />
+              <Feather name="navigation" style={{fontSize: 26}} />
+            </View>
+          </View>
+        </View>
+      ) : null}
     </View>
   );
-}
+};
+
+export default Search;
