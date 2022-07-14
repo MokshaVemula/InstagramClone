@@ -90,8 +90,8 @@ const FriendProfile = ({route, navigation}) => {
                           name="close"
                           style={{
                             fontSize: 20,
-                            color: 'black',
-                            opacity: 0.5,
+                            color: 'white',
+                            opacity: 0.8,
                           }}
                         />
                       </TouchableOpacity>
@@ -104,10 +104,10 @@ const FriendProfile = ({route, navigation}) => {
                           margin: 10,
                         }}
                       />
-                      <Text style={{fontWeight: 'bold', fontSize: 16}}>
+                      <Text style={{fontWeight: 'bold', fontSize: 16, color:'white'}}>
                         {data.name}
                       </Text>
-                      <Text style={{fontSize: 12}}>{data.accountName}</Text>
+                      <Text style={{fontSize: 12, color:'white'}}>{data.accountName}</Text>
                       <TouchableOpacity
                         onPress={() => setIsFollow(!isFollow)}
                         style={{width: '80%', paddingVertical: 10}}>
@@ -116,13 +116,13 @@ const FriendProfile = ({route, navigation}) => {
                             width: '100%',
                             height: 30,
                             borderRadius: 5,
-                            backgroundColor: isFollow ? null : '#3493D9',
+                            backgroundColor: isFollow ? '#424242' : '#3493D9',
                             borderWidth: isFollow ? 1 : 0,
-                            borderColor: '#DEDEDE',
+                            //borderColor: '#DEDEDE',
                             justifyContent: 'center',
                             alignItems: 'center',
                           }}>
-                          <Text style={{color: isFollow ? 'black' : 'white'}}>
+                          <Text style={{color: isFollow ? 'white' : 'white'}}>
                             {isFollow ? 'Following' : 'Follow'}
                           </Text>
                         </View>

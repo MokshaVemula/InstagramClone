@@ -14,14 +14,25 @@ import Login from "../Authentication/Login";
 import Register from "../Authentication/Register";
 import EditProfile from "../components/Profile/EditProfile";
 import FriendProfile from "../components/notification/FriendProfile";
+import UserPosts from "../components/Profile/UserPosts";
 
 const Tab = createBottomTabNavigator()
 
 const BottomTabNavigation = () =>{
     return(
         
-            <Tab.Navigator screenOptions={{headerShown:false, tabBarShowLabel:false, }} 
-                tabBarOptions={{activeBackgroundColor: 'black', inactiveBackgroundColor: 'black',}}
+            <Tab.Navigator 
+                //screenOptions={{headerShown:false, tabBarShowLabel:false, }} 
+                //tabBarOptions={{activeBackgroundColor: 'black', inactiveBackgroundColor: 'black',}}
+                screenOptions={({route})=>({
+                    headerShown:false,
+                    tabBarStyle:{backgroundColor:'black'},
+                    tabBarShowLabel: false,
+                    tabBarIndicatorStyle: {
+                        backgroundColor: 'black',
+                        height: 1.5,
+                      },
+                })}
             >
                 <Tab.Screen name="Home" component={Home} options={{tabBarIcon:()=>(<Icon name='home-outline' color='white' size={30}/>)}} />
                 <Tab.Screen name="Search" component={Search} options={{tabBarIcon:()=>(<Icon name='search' color='white' size={30}/>)}}/>
@@ -55,8 +66,10 @@ const HomeStack = () =>{
                 headerShown: false,
                 }}>
                 <Stack.Screen name="BottomTabNavigation" component={BottomTabNavigation} />
+                <Stack.Screen name='UserPosts' component={UserPosts} />
                 <Stack.Screen name="EditProfile" component={EditProfile} />
                 <Stack.Screen name="FriendProfile" component={FriendProfile} />
+                
             </Stack.Navigator>
         </NavigationContainer>
     )

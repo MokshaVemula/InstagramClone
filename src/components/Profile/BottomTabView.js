@@ -1,36 +1,36 @@
 import React from 'react';
-import {View, Text, ScrollView, Image} from 'react-native';
+import {View, Text, ScrollView, Image, TouchableOpacity} from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import Ionic from 'react-native-vector-icons/Ionicons';
 import { USERS } from '../Home/Stories';
 import { POSTS } from '../Home/Post';
 
-const BottomTabView = () => {
+const BottomTabView = ({navigation}) => {
   const Tab = createMaterialTopTabNavigator();
 
 
   
 
-  let squares = [];
-  let numberOfSquare = 7;
-  let count=0
+  // let squares = [];
+  // let numberOfSquare = 7;
+  // let count=0
 
-  for (let index = 0; index < numberOfSquare; index++) {
-    squares.push(
-      <View key={index}>
-        <Image
-          style={{
-            width: 130,
-            height: 150,
-            marginVertical: 0.5,
-            // backgroundColor: 'white',
-            // opacity: 0.3,
-          }}
-            source = {{uri:POSTS[count].imageUrl}}
-          />
-      </View>,
-    );
-  }
+  // for (let index = 0; index < numberOfSquare; index++) {
+  //   squares.push(
+  //     <View key={index}>
+  //       <Image
+  //         style={{
+  //           width: 130,
+  //           height: 150,
+  //           marginVertical: 0.5,
+  //           // backgroundColor: 'white',
+  //           // opacity: 0.3,
+  //         }}
+  //           source = {{uri:POSTS[count].imageUrl}}
+  //         />
+  //     </View>,
+  //   );
+  // }
 
 
   
@@ -54,10 +54,13 @@ const BottomTabView = () => {
             justifyContent: 'space-between',
           }}>
           {USERS.map((index, key)=>(
-            <Image style={{height:150, width:130,marginVertical:0.5}}
-              source={{uri:index.image}}
-              key={key}
-            />
+            <TouchableOpacity>
+              <Image style={{height:150, width:130,marginVertical:0.5}}
+                source={{uri:index.image}}
+                key={key}
+              />
+            </TouchableOpacity>
+            
           ))}
         </View>
       </ScrollView>
@@ -109,7 +112,14 @@ const BottomTabView = () => {
             paddingVertical: 5,
             justifyContent: 'space-between',
           }}>
-          {squares}
+          {/* {squares} */}
+
+          {POSTS.map((index, key)=>(
+            <Image source={{uri:index.imageUrl}} 
+              key = {key}
+              style={{width: 130, height: 150, marginVertical: 0.5,}}
+            />
+          ))}
         </View>
       </ScrollView>
     );
