@@ -13,12 +13,12 @@ const FriendProfile = ({route, navigation}) => {
       style={{
         width: '100%',
         height: '100%',
-        backgroundColor: 'white',
+        backgroundColor: 'black',
         padding: 10,
       }}>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Ionic name="arrow-back" style={{fontSize: 20, color: 'black'}} />
+          <Ionic name="arrow-back" style={{fontSize: 20, color: 'white'}} />
         </TouchableOpacity>
         <View
           style={{
@@ -27,12 +27,12 @@ const FriendProfile = ({route, navigation}) => {
             alignItems: 'center',
             width: '92%',
           }}>
-          <Text style={{fontSize: 15, marginLeft: 10, fontWeight: 'bold'}}>
+          <Text style={{fontSize: 15, marginLeft: 10, fontWeight: 'bold', color:'white'}}>
             {name}
           </Text>
           <Feather
             name="more-vertical"
-            style={{fontSize: 20, color: 'black'}}
+            style={{fontSize: 20, color: 'white'}}
           />
         </View>
       </View>
@@ -49,6 +49,7 @@ const FriendProfile = ({route, navigation}) => {
           paddingVertical: 10,
           fontSize: 15,
           fontWeight: 'bold',
+          color:'white'
         }}>
         Suggested for you
       </Text>

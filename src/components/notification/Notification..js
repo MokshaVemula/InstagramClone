@@ -7,7 +7,7 @@ import {useNavigation} from '@react-navigation/native';
 const Activity = () => {
   const navigation = useNavigation();
   return (
-    <View style={{width: '100%', height: '100%', backgroundColor: 'white'}}>
+    <View style={{width: '100%', height: '100%', backgroundColor: 'black'}}>
       <Text
         style={{
           fontSize: 20,
@@ -15,11 +15,12 @@ const Activity = () => {
           borderBottomWidth: 0.5,
           borderBottomColor: '#DEDEDE',
           padding: 10,
+          color:'white'
         }}>
         Activity
       </Text>
       <ScrollView style={{margin: 10}} showsVerticalScrollIndicator={false}>
-        <Text style={{fontWeight: 'bold'}}>This Week</Text>
+        <Text style={{fontWeight: 'bold', color:'white'}}>This Week</Text>
         <View style={{flexDirection: 'row', paddingVertical: 10}}>
           {FriendsProfileData.slice(0, 3).map((data, index) => {
             return (
@@ -35,13 +36,13 @@ const Activity = () => {
                   })
                 }
                 key={index}>
-                <Text>{data.name},</Text>
+                <Text style={{color:'white'}}>{data.name},</Text>
               </TouchableOpacity>
             );
           })}
-          <Text> Started following you</Text>
+          <Text style={{color:'white'}}> Started following you</Text>
         </View>
-        <Text style={{fontWeight: 'bold'}}>Earlier</Text>
+        <Text style={{fontWeight: 'bold', color:'white'}}>Earlier</Text>
         {FriendsProfileData.slice(3, 6).map((data, index) => {
           const [follow, setFollow] = useState(data.follow);
           return (
@@ -53,6 +54,7 @@ const Activity = () => {
                   alignItems: 'center',
                   paddingVertical: 20,
                   width: '100%',
+                  
                 }}>
                 <TouchableOpacity
                   onPress={() =>
@@ -80,26 +82,27 @@ const Activity = () => {
                       marginRight: 10,
                     }}
                   />
-                  <Text style={{fontSize: 15}}>
+                  <Text style={{fontSize: 15, color:'white'}}>
                     <Text style={{fontWeight: 'bold'}}>{data.name}</Text>, who
                     you might know, is on instagram
                   </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   onPress={() => setFollow(!follow)}
-                  style={{width: follow ? 72 : 68}}>
+                  style={{width: follow ? 72 : 68,}}>
                   <View
                     style={{
                       width: '100%',
                       height: 30,
                       borderRadius: 5,
-                      backgroundColor: follow ? null : '#3493D9',
+                      backgroundColor: follow ? '#424242' : '#3493D9',
                       borderWidth: follow ? 1 : 0,
-                      borderColor: follow ? '#DEDEDE' : null,
+                      //borderColor: follow ? '#DEDEDE' : null,
                       justifyContent: 'center',
                       alignItems: 'center',
+                      
                     }}>
-                    <Text style={{color: follow ? 'black' : 'white'}}>
+                    <Text style={{color: follow ? 'white' : 'white'}}>
                       {follow ? 'Following' : 'Follow'}
                     </Text>
                   </View>
@@ -108,7 +111,7 @@ const Activity = () => {
             </View>
           );
         })}
-        <Text style={{fontWeight: 'bold', paddingVertical: 10}}>
+        <Text style={{fontWeight: 'bold', paddingVertical: 10, color:'white'}}>
           Suggestions for you
         </Text>
         {FriendsProfileData.slice(6.12).map((data, index) => {
@@ -150,14 +153,14 @@ const Activity = () => {
                           marginRight: 10,
                         }}
                       />
-                      <View style={{width: '100%'}}>
-                        <Text style={{fontSize: 14, fontWeight: 'bold'}}>
+                      <View style={{width: '100%', }}>
+                        <Text style={{fontSize: 14, fontWeight: 'bold', color:'white'}}>
                           {data.name}
                         </Text>
-                        <Text style={{fontSize: 12, opacity: 0.5}}>
+                        <Text style={{fontSize: 12, opacity: 0.5, color:'white'}}>
                           {data.accountName}
                         </Text>
-                        <Text style={{fontSize: 12, opacity: 0.5}}>
+                        <Text style={{fontSize: 12, opacity: 0.5, color:'white'}}>
                           Sugggested for you
                         </Text>
                       </View>
@@ -175,13 +178,13 @@ const Activity = () => {
                             width: '100%',
                             height: 30,
                             borderRadius: 5,
-                            backgroundColor: follow ? null : '#3493D9',
-                            borderWidth: follow ? 1 : 0,
+                            backgroundColor: follow ? '#424242' : '#3493D9',
+                            //borderWidth: follow ? 1 : 0,
                             borderColor: '#DEDEDE',
                             justifyContent: 'center',
                             alignItems: 'center',
                           }}>
-                          <Text style={{color: follow ? 'black' : 'white'}}>
+                          <Text style={{color: follow ? 'white' : 'white'}}>
                             {follow ? 'following' : 'follow'}
                           </Text>
                         </View>
@@ -214,7 +217,7 @@ const Activity = () => {
                           style={{paddingHorizontal: 10}}>
                           <AntDesign
                             name="close"
-                            style={{fontSize: 14, color: 'black', opacity: 0.8}}
+                            style={{fontSize: 14, color: 'white', opacity: 0.8}}
                           />
                         </TouchableOpacity>
                       </>
