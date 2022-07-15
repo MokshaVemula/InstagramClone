@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Text, View, Image, TouchableOpacity, StyleSheet} from 'react-native'
 //import { Divider } from 'react-native-elements'
 import { USERS } from './Stories'
@@ -107,11 +107,12 @@ const PostImage = ({post}) =>{
 }
 
 const PostFooter = ({post}) =>{
+    const [heart, setHeart] = useState(false)
     return(
         <View style={{flexDirection:'row'}}>
             <View style={{flexDirection:'row', width:'32%', justifyContent:'space-between'}}>
-                <TouchableOpacity>
-                    <Icon name='heart-outline' size={25} color='#fff'/>
+                <TouchableOpacity onPress={()=>setHeart(!heart)}>
+                    <Icon name={heart?'heart':'heart-outline'} size={25} color={heart?'red':'#fff'}/>
                 </TouchableOpacity>
                 <TouchableOpacity>
                     <Icon name='chatbubble-outline' size={25} color='#fff'/>

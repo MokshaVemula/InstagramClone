@@ -2,6 +2,7 @@ import React from 'react';
 import {View, TextInput} from 'react-native';
 import Ionic from 'react-native-vector-icons/Ionicons';
 
+
 const SearchBox = () => {
   return (
     <View
