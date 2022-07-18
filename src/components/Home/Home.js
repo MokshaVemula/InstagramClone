@@ -6,6 +6,8 @@ import { POSTS } from "./Post";
 import {Post} from "./Post";
 
 
+
+
 const Home = () =>{
   
   return(

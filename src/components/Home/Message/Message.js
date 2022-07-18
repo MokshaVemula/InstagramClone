@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react';
-import database from '@react-native-firebase/database';
+import React from "react";
+import {View, Text} from 'react-native'
 
-const Message=({ userId }) =>{
-  useEffect(() => {
-    const onValueChange = database()
-      .ref(`/users/${userId}`)
-      .on('value', snapshot => {
-        console.log('User data: ', snapshot.val());
-        });
-
-    // Stop listening for updates when no longer required
-    return () => database().ref(`/users/${userId}`).off('value', onValueChange);
-  }, [userId]);
+const Message = () =>{
+  return(
+    <View>
+      <Text>
+        Hi
+      </Text>
+    </View>
+  )
 }
 
 export default Message

@@ -9,31 +9,6 @@ const BottomTabView = ({navigation}) => {
   const Tab = createMaterialTopTabNavigator();
 
 
-  
-
-  // let squares = [];
-  // let numberOfSquare = 7;
-  // let count=0
-
-  // for (let index = 0; index < numberOfSquare; index++) {
-  //   squares.push(
-  //     <View key={index}>
-  //       <Image
-  //         style={{
-  //           width: 130,
-  //           height: 150,
-  //           marginVertical: 0.5,
-  //           // backgroundColor: 'white',
-  //           // opacity: 0.3,
-  //         }}
-  //           source = {{uri:POSTS[count].imageUrl}}
-  //         />
-  //     </View>,
-  //   );
-  // }
-
-
-  
 
   const Posts = () => {
     return (

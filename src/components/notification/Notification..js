@@ -4,6 +4,8 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import { FriendsProfileData } from './FriendsProfileData';
 import {useNavigation} from '@react-navigation/native';
 
+
+
 const Activity = () => {
   const navigation = useNavigation();
   return (

@@ -22,11 +22,8 @@ const InstaClone=()=>{
   return(
     <Authentication/>
   )
-  
-  
+    
 }
-
-
 
 const App = () => {
 

@@ -5,6 +5,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { ProfileBody,ProfileButtons } from '../Profile/ProfileBody';
 import { FriendsProfileData } from './FriendsProfileData';
+import { USERS } from '../Home/Stories';
 
 const FriendProfile = ({route, navigation}) => {
   const {name, profileImage, follow, post, followers, following} = route.params;
