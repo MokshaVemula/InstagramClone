@@ -38,7 +38,7 @@ const BottomTabNavigation = () =>{
                       colour =  'white';
                     } else if (route.name === 'Search') {
                       iconName = focused ? 'search' : 'search-outline';
-                      colour = 'white';
+                      colour = 'white'; 
                     } else if (route.name === 'Reel') {
                       iconName = focused ? 'caret-forward-circle' : 'caret-forward-circle-outline';
                       colour = 'white';
