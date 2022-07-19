@@ -37,14 +37,62 @@ const FriendProfile = ({route, navigation}) => {
           />
         </View>
       </View>
-      <ProfileBody
+      {/* <ProfileBody
         name={name}
         profileImage={profileImage}
         post={post}
         followers={followers}
         following={following}
-      />
+      /> */}
+      
+
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-around',
+          paddingVertical: 20,
+        }}>
+        <View
+          style={{
+            alignItems: 'center',
+          }}>
+          <Image
+            source={{uri:profileImage}}
+            style={{
+              resizeMode: 'cover',
+              width: 80,
+              height: 80,
+              borderRadius: 100,
+              borderColor:'white',
+              borderWidth:1
+            }}
+          />
+          <Text
+            style={{
+              paddingVertical: 5,
+              fontWeight: 'bold',
+              color:'white'
+            }}>
+            {name}
+          </Text>
+        </View>
+        <View style={{alignItems: 'center'}}>
+          <Text style={{fontWeight: 'bold', fontSize: 18, color: 'white',}}>{post}</Text>
+          <Text style={{color:'white'}}>Posts</Text>
+        </View>
+        <View style={{alignItems: 'center'}}>
+          <Text style={{fontWeight: 'bold', fontSize: 18, color: 'white',}}>{followers}</Text>
+          <Text style={{color:'white'}}>Followers</Text>
+        </View>
+        <View style={{alignItems: 'center'}}>
+          <Text style={{fontWeight: 'bold', fontSize: 18, color: 'white',}}>{following}</Text>
+          <Text style={{color:'white'}}>Following</Text>
+        </View>
+      </View>
+
       <ProfileButtons id={1} />
+    
       <Text
         style={{
           paddingVertical: 10,

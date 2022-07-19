@@ -175,13 +175,13 @@ const ProfileButtons = ({id, name, accountName, profileImage}) => {
                 width: '100%',
                 height: 35,
                 borderRadius: 5,
-                backgroundColor: follow ? null : '#3493D9',
+                backgroundColor: follow ? '#424242' : '#3493D9',
                 borderWidth: follow ? 1 : 0,
                 borderColor: '#DEDEDE',
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <Text style={{color: follow ? 'black' : 'white'}}>
+              <Text style={{color: follow ? 'white' : 'white'}}>
                 {follow ? 'Following' : 'Follow'}
               </Text>
             </View>
@@ -197,7 +197,7 @@ const ProfileButtons = ({id, name, accountName, profileImage}) => {
               borderRadius: 5,
               color:'white'
             }}>
-            <Text>Message</Text>
+            <Text style={{color:'white'}}>Message</Text>
           </View>
           <View
             style={{
