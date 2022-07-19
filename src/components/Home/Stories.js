@@ -6,53 +6,63 @@ import { useNavigation } from "@react-navigation/native";
 
 const USERS = [{
     user: 'Moksha_Moni',
+    name:'mocha',
     image: 'https://i.pinimg.com/550x/1f/83/c5/1f83c5ce9090c12d1969ad7a3745cc82.jpg',
-    key:1,
+    id:1,
 },
 {
     user: 'itsmemeghss',
+    name:'megha',
     image: 'https://image.shutterstock.com/image-photo/young-adult-profile-picture-red-260nw-1655747050.jpg',
-    key:2,
+    id:2,
 },
 {
     user: 'jyoo__21',
+    name:'jyo',
     image: 'https://image.shutterstock.com/image-photo/smiling-teen-girl-1617-year-260nw-1700600221.jpg',
-    key:3,
+    id:3,
 },
 {
     user: 'pravalika_rita',
+    name:'prava',
     image: 'https://images.unsplash.com/photo-1594751543129-6701ad444259?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGFyayUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
-    key:4,
+    id:4,
 },
 {
     user: 's_g_eswar',
+    name:'gnan',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmwlpMo2uIF90YQTSfEad28sj2ku7hd9zWpA&usqp=CAU',
-    key:5,
+    id:5,
 },
 {
     user: 'meghnaa_08',
+    name:'megha',
     image: 'https://www.statuspik.com/wp-content/uploads/2020/12/best-whatsapp-dp-for-girls-6.jpg',
-    key:7,
+    id:7,
 },
 {
     user: 'jupudisrividya',
+    name:'vidya',
     image: 'https://image.shutterstock.com/image-photo/young-adult-profile-picture-red-260nw-1655747050.jpg',
-    key:8,
+    id:8,
 },
 {
     user: 'katam.niharika',
+    name:'harika',
     image: 'https://image.shutterstock.com/image-photo/smiling-teen-girl-1617-year-260nw-1700600221.jpg',
-    key:9,
+    id:9,
 },
 {
     user: 'ananya_shati',
+    name:'shati',
     image: 'https://images.unsplash.com/photo-1594751543129-6701ad444259?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGFyayUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
-    key:10,
+    id:10,
 },
 {
     user: 'uday_83',
+    name:'uday',
     image: 'https://www.statuspik.com/wp-content/uploads/2020/12/best-whatsapp-dp-for-girls-6.jpg',
-    key:11,
+    id:11,
 },
 
 ]

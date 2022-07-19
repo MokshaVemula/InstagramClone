@@ -16,6 +16,7 @@ import FriendProfile from "../components/notification/FriendProfile";
 import UserPosts from "../components/Profile/UserPosts";
 import Status from "../components/Home/Status";
 import Message from "../components/Home/Message/Message";
+import MessageList from "../components/Home/Message/MessageList";
 
 const Tab = createBottomTabNavigator()
 
@@ -91,6 +92,7 @@ const HomeStack = () =>{
                 }}>
                 <Stack.Screen name="BottomTabNavigation" component={BottomTabNavigation} />
                 <Stack.Screen name='Message' component={Message} />
+                <Stack.Screen name='MessageList' component={MessageList} />
                 <Stack.Screen name='UserPosts' component={UserPosts} />
                 <Stack.Screen name="EditProfile" component={EditProfile} />
                 <Stack.Screen name="FriendProfile" component={FriendProfile} />

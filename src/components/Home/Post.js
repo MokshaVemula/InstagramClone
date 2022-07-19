@@ -3,6 +3,7 @@ import {Text, View, Image, TouchableOpacity, StyleSheet} from 'react-native'
 //import { Divider } from 'react-native-elements'
 import { USERS } from './Stories'
 import Icon from 'react-native-vector-icons/Ionicons'
+import MessageList from './Message/MessageList'
 
 const POSTS = [{
     key:1,
