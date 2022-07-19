@@ -31,14 +31,39 @@ const BottomTabNavigation = () =>{
                     backgroundColor: 'black',
                     height: 1.5,
                 },
+                tabBarIcon: ({focused, colour}) => {
+                    let iconName;
+                    if (route.name === 'Home') {
+                      iconName = focused ? 'home' : 'home-outline';
+                      colour = focused ? 'white' : 'gray';
+                    } else if (route.name === 'Search') {
+                      iconName = focused ? 'search' : 'search-outline';
+                      colour = focused ? 'white' : 'gray';
+                    } else if (route.name === 'Reel') {
+                      iconName = focused ? 'caret-forward-circle' : 'caret-forward-circle-outline';
+                      colour = focused ? 'white' : 'gray';
+
+                    }else if (route.name==='Activity'){
+                        iconName = focused ? 'heart':'heart-outline'
+                        colour = focused?'white' : 'gray'
+                    }
+                    return <Icon name={iconName} color={colour} size={30} />;
+                  },
+                
             })}
+
+            
         >
-            <Tab.Screen name="Home" component={Home} options={{tabBarIcon:()=>(<Icon name='home-outline' color='white' size={30}/>)}} />
-            <Tab.Screen name="Search" component={Search} options={{tabBarIcon:()=>(<Icon name='search' color='white' size={30}/>)}}/>
-            <Tab.Screen name="Reel" component={Reel} options={{tabBarIcon:()=>(<Icon name="caret-forward-circle-outline" color='white' size={30}/>)}}/>
-            <Tab.Screen name="Activity" component={Activity} options={{tabBarIcon:()=>(<Icon name='heart-outline' color='white' size={30}/>)}}/>
+            <Tab.Screen name="Home" component={Home} />
+            <Tab.Screen name="Search" component={Search} />
+            <Tab.Screen name="Reel" component={Reel} />
+            <Tab.Screen name="Activity" component={Activity}/>
             <Tab.Screen name="Profile" component={Profile} options={{tabBarIcon:()=>(<Image source={{uri:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80'}} style={{height:35, width:35, borderRadius:18, borderWidth:2,borderColor:'white', marginTop:3}}/>)}}/>
         </Tab.Navigator>
+
+        //options={{tabBarIcon:()=>(<Icon name='home-outline' color='white' size={30}/>)}}
+        //caret-forward-circle-outline
+        //heart-outline
         
     )
 }
