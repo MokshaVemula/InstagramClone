@@ -4,8 +4,8 @@ import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 import Stories from "./Stories";
 
-const Header = ({navigation}) =>{
-    //const navigation = useNavigation()
+const Header = () =>{
+    const navigation = useNavigation()
 
   return(
       <View>

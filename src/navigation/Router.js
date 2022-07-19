@@ -35,17 +35,17 @@ const BottomTabNavigation = () =>{
                     let iconName;
                     if (route.name === 'Home') {
                       iconName = focused ? 'home' : 'home-outline';
-                      colour = focused ? 'white' : 'gray';
+                      colour =  'white';
                     } else if (route.name === 'Search') {
                       iconName = focused ? 'search' : 'search-outline';
-                      colour = focused ? 'white' : 'gray';
+                      colour = 'white';
                     } else if (route.name === 'Reel') {
                       iconName = focused ? 'caret-forward-circle' : 'caret-forward-circle-outline';
-                      colour = focused ? 'white' : 'gray';
+                      colour = 'white';
 
                     }else if (route.name==='Activity'){
                         iconName = focused ? 'heart':'heart-outline'
-                        colour = focused?'white' : 'gray'
+                        colour ='white'
                     }
                     return <Icon name={iconName} color={colour} size={30} />;
                   },
@@ -90,7 +90,7 @@ const HomeStack = () =>{
                 headerShown: false,
                 }}>
                 <Stack.Screen name="BottomTabNavigation" component={BottomTabNavigation} />
-                
+                <Stack.Screen name='Message' component={Message} />
                 <Stack.Screen name='UserPosts' component={UserPosts} />
                 <Stack.Screen name="EditProfile" component={EditProfile} />
                 <Stack.Screen name="FriendProfile" component={FriendProfile} />

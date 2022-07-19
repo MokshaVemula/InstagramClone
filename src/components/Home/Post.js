@@ -5,6 +5,7 @@ import { USERS } from './Stories'
 import Icon from 'react-native-vector-icons/Ionicons'
 
 const POSTS = [{
+    key:1,
     imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80",
     user: 'Moksha_Vemula',
     location:'Hyderabad',
@@ -26,6 +27,7 @@ const POSTS = [{
     ]
 },
 {
+    key:2,
     imageUrl: "https://i.pinimg.com/550x/1f/83/c5/1f83c5ce9090c12d1969ad7a3745cc82.jpg",
     user: USERS[0].user,
     location:'Some where on the world',
@@ -35,6 +37,7 @@ const POSTS = [{
     comments: []
 },
 {
+    key:3,
     imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmwlpMo2uIF90YQTSfEad28sj2ku7hd9zWpA&usqp=CAU",
     user: USERS[4].user,
     likes: 7870,
