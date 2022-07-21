@@ -13,7 +13,10 @@ import Feather from 'react-native-vector-icons/Feather';
 
 const Status = ({route, navigation}) => {
   const {name} = route.params;
-  const {image} = route.params;
+  const{image}= route.params
+
+  
+
 
   useEffect(() => {
     let timer = setTimeout(() => {
@@ -44,6 +47,7 @@ const Status = ({route, navigation}) => {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
+        
       <StatusBar backgroundColor="black" barStyle="light-content" />
       <View
         style={{
@@ -108,9 +112,10 @@ const Status = ({route, navigation}) => {
         </View>
       </View>
       <Image
-        source={image}
+        source={{uri:image}}
         style={{position: 'absolute', width: '100%', height: 600}}
       />
+      
       <View
         style={{
           position: 'absolute',
@@ -140,7 +145,9 @@ const Status = ({route, navigation}) => {
           <Feather name="navigation" style={{fontSize: 30, color: 'white'}} />
         </TouchableOpacity>
       </View>
+      
     </View>
+    
   );
 };
 

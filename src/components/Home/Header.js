@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         color:'white',
         fontWeight:'bold',
-        fontStyle:'Roboto',
+        fontStyle:'italic',
         fontSize:22
 
       },

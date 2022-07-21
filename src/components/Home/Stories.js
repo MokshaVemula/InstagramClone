@@ -69,19 +69,20 @@ const USERS = [{
 
 const Stories = () =>{
     const Navigation = useNavigation()
+    let url = 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80'
     
     return(
         <View style={{marginBottom:13}}>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                <TouchableOpacity style={{alignItems:'center', justifyContent:'center'}} onPress={()=>Navigation.push('Status')}>
-                    <Image source={{uri:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80'}} style={styles.story}/>
+                <TouchableOpacity style={{alignItems:'center', justifyContent:'center'}} onPress={()=>Navigation.push('Status',{name:url, name:'Moksha Vemula'})}>
+                    <Image source={{uri:url}} style={styles.story}/>
                     <View style={styles.badge}>
                         <Icon name="add-outline" size={20} color='white'/>
                     </View>
                     <Text style={{color:'white'}}>Your story</Text>
                 </TouchableOpacity >
                 {USERS.map((story, index)=>(
-                    <TouchableOpacity key={index} style={{alignItems:'center', justifyContent:'center'}} onPress={()=>Navigation.push('Status',{name:story.image, name:story.user})}>
+                    <TouchableOpacity key={index} style={{alignItems:'center', justifyContent:'center'}} onPress={()=>Navigation.push('Status',{image:story.image, name:story.name})}>
                         <Image source={{uri:story.image}} style={styles.story}/>
                         <Text style={{color:'white',marginLeft:5}}>{story.user.length>9 ? story.user.slice(0,10).toLowerCase() + '...' : story.user.toLowerCase()}</Text>
                     </TouchableOpacity>
