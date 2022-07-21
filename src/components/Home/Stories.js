@@ -82,7 +82,7 @@ const Stories = () =>{
                     <Text style={{color:'white'}}>Your story</Text>
                 </TouchableOpacity >
                 {USERS.map((story, index)=>(
-                    <TouchableOpacity key={index} style={{alignItems:'center', justifyContent:'center'}} onPress={()=>Navigation.push('Status',{image:story.image, name:story.name})}>
+                    <TouchableOpacity key={index} style={{alignItems:'center', justifyContent:'center'}} onPress={()=>Navigation.push('Status',{image1:story.image, name:story.name})}>
                         <Image source={{uri:story.image}} style={styles.story}/>
                         <Text style={{color:'white',marginLeft:5}}>{story.user.length>9 ? story.user.slice(0,10).toLowerCase() + '...' : story.user.toLowerCase()}</Text>
                     </TouchableOpacity>

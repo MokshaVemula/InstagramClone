@@ -13,7 +13,7 @@ import Feather from 'react-native-vector-icons/Feather';
 
 const Status = ({route, navigation}) => {
   const {name} = route.params;
-  const{image}= route.params
+  const{image1}= route.params
 
   
 
@@ -84,7 +84,7 @@ const Status = ({route, navigation}) => {
             alignItems: 'center',
           }}>
           <Image
-            source={{uri:image}}
+            source={{uri:image1}}
             style={{
               borderRadius: 100,
               backgroundColor: 'orange',
@@ -112,7 +112,7 @@ const Status = ({route, navigation}) => {
         </View>
       </View>
       <Image
-        source={{uri:image}}
+        source={{uri:image1}}
         style={{position: 'absolute', width: '100%', height: 600}}
       />
       
