@@ -84,50 +84,6 @@ const Login = ({navigation}) =>{
           <Pressable style={{alignItems:'center',paddingTop:10, justifyContent:'center', paddingBottom:10, backgroundColor:'black', paddingHorizontal:20}} onPress={()=>navigation.navigate('Register')}>
             <Text style={{color:'white', marginRight:8, fontSize:18,}}>Don't have an account? <Text style={{fontWeight:'bold'}}>sign up.</Text></Text>
           </Pressable>
-          
-          
-        {/* <View style = {styles.container} >
-            <LinearGradient colors={['red', 'yellow', 'green' ]} style={styles.linearGradient} start={{ x: 0, y: 0 }} end={{x: 1, y: 1 }}>
-                
-                <View style={[styles.textContainer,{alignItems:'center',justifyContent:'center'}]}>
-                    <LinearGradient colors={['pink', 'yellow', 'pink' ]}  start={{ x: 0, y: 0 }} end={{x: 1, y: 1 }} style={{width:'90%', borderRadius:30, marginBottom:20, }}>
-                        <View style={styles.flexView}>
-                            <Icon name='email' size={34} style={{paddingLeft:20, color:'black'}}/>
-                            <TextInput 
-                                placeholder='Enter your Email' 
-                                style={styles.input}
-                                value={email}
-                                onChangeText={(value)=>dispatch(setEmail(value))}
-                                keyboardType='email-address'
-                            />
-                        </View>
-                        
-                    </LinearGradient>
-                    <LinearGradient colors={['pink', 'yellow', 'pink']}  start={{ x: 0, y: 0 }} end={{x: 1, y: 1 }} style={{width:'90%', borderRadius:30, marginBottom:20}}>
-                        <View style={styles.flexView}>
-                            <Icon name='lock' size={34} style={{paddingLeft:20, color:'black'}}/>
-                            <TextInput 
-                                placeholder='Enter your Password' 
-                                style={styles.input}
-                                value={password}
-                                onChangeText={(value)=>dispatch(setPassword(value))}
-                                secureTextEntry={true}
-                            />
-                        </View>
-                        
-                    </LinearGradient>
-                    <Pressable style={styles.register} onPress={()=>navigation.navigate('Register')}>
-                        <Text style={{color:'#4286f4', marginRight:8, fontSize:18, fontWeight:'800', }}>Register Here</Text>
-                        <Icon name='east' size={24} style={{color:'#4286f4'}}/>
-                    </Pressable>
-                    <Pressable style={styles.Login} onPress={() => signin(email, password)}>
-                        <Text style={{color:'white', marginRight:8, fontSize:24, fontWeight:'800', }}>Login</Text>
-                        <Icon name='east' size={24} style={{color:'white'}}/>
-                    </Pressable>
-                                   
-                </View>
-            </LinearGradient>
-        </View> */}
       </Provider>
     )
 }

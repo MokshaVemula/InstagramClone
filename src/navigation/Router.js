@@ -18,6 +18,7 @@ import Status from "../components/Home/Status";
 import Message from "../components/Home/Message/Message";
 import MessageList from "../components/Home/Message/MessageList";
 
+
 const Tab = createBottomTabNavigator()
 
 const BottomTabNavigation = () =>{
@@ -82,21 +83,18 @@ const Authentication = () =>{
 }
 
 
-const HomeStack = () =>{
+const HomeStack = ({route}) =>{
     const Stack = createNativeStackNavigator();
     return(
         <NavigationContainer>
-            <Stack.Navigator
-                screenOptions={{
-                headerShown: false,
-                }}>
-                <Stack.Screen name="BottomTabNavigation" component={BottomTabNavigation} />
+            <Stack.Navigator>
+                <Stack.Screen name="BottomTabNavigation" component={BottomTabNavigation} options={{headerShown:false}}/>
                 <Stack.Screen name='Message' component={Message} />
-                <Stack.Screen name='MessageList' component={MessageList} />
-                <Stack.Screen name='UserPosts' component={UserPosts} />
-                <Stack.Screen name="EditProfile" component={EditProfile} />
-                <Stack.Screen name="FriendProfile" component={FriendProfile} />
-                <Stack.Screen name="Status" component={Status} />
+                <Stack.Screen name='MessageList' component={MessageList} options={{headerShown:false}}/>
+                <Stack.Screen name='UserPosts' component={UserPosts} options={{headerShown:false}}/>
+                <Stack.Screen name="EditProfile" component={EditProfile} options={{headerShown:false}}/>
+                <Stack.Screen name="FriendProfile" component={FriendProfile} options={{headerShown:false}}/>
+                <Stack.Screen name="Status" component={Status} options={{headerShown:false}}/>
                 
             </Stack.Navigator>
         </NavigationContainer>
