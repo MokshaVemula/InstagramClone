@@ -1,5 +1,5 @@
-import React from "react";
-import {View, Text, SafeAreaView, TouchableOpacity, StyleSheet, Image} from 'react-native'
+import React,{useState} from "react";
+import {View, Text, SafeAreaView, TouchableOpacity, StyleSheet, Image,} from 'react-native'
 import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 import Stories from "./Stories";
@@ -7,6 +7,7 @@ import MessageList from "./Message/MessageList";
 
 const Header = () =>{
     const navigation = useNavigation()
+   
 
   return(
       <View>
@@ -18,7 +19,7 @@ const Header = () =>{
             <TouchableOpacity>
                 <Icon style = {styles.icon} name = "add-circle-outline" size = {30} color = "#fff" />
             </TouchableOpacity> 
-            <TouchableOpacity onPress={()=>navigation.navigate('MessageList')}>
+            <TouchableOpacity onPress={()=>{navigation.navigate('MessageList')}}>
                 <View style={styles.badge}>
                     <Text style={styles.badgeText}>11</Text>
                 </View>

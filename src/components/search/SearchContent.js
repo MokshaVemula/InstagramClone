@@ -1,7 +1,10 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const SearchContent = props => {
+  const navigation = useNavigation()
   const searchData = [
     {
       id: 0,
@@ -82,6 +85,7 @@ const SearchContent = props => {
                   return (
                     <TouchableOpacity
                       key={imgIndex}
+                      
                       onPressIn={() => props.data(imageData)}
                       onPressOut={() => props.data(null)}
                       style={{paddingBottom: 2,width:'33%'}}>

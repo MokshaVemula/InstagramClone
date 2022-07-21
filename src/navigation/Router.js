@@ -18,7 +18,6 @@ import Status from "../components/Home/Status";
 import Message from "../components/Home/Message/Message";
 import MessageList from "../components/Home/Message/MessageList";
 
-
 const Tab = createBottomTabNavigator()
 
 const BottomTabNavigation = () =>{

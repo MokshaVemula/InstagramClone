@@ -53,7 +53,7 @@ const Message = ({route})=> {
     <GiftedChat
       messages={messages}
       onSend={messages => onSend(messages)}
-      isTyping='falses'
+      isTyping='true'
       placeholder='type a message'
       
       user={{
